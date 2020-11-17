@@ -10,8 +10,7 @@ public class WebDriverFactory {
 
     public static IWebDriverInstanceInit initWebDriverInstance(BrowserConfiguration.BrowserType browserType)
     {
-        switch (browserType)
-        {
+        switch (browserType) {
             case CHROME:
                 //add log("Setting up Chrome");
                 return new ChromeWebdriverInstance();

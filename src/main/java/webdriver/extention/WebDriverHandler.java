@@ -7,8 +7,7 @@ import webdriver.Implementation.DriverManager;
 
 public class WebDriverHandler {
 
-    public static void waitForElementToBeDisplayed(WebElement element)
-    {
+    public static void waitForElementToBeDisplayed(WebElement element) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getWebDriverInstance(), 10);
         wait.until(driver -> {
             try
@@ -22,18 +21,16 @@ public class WebDriverHandler {
         });
     }
 
-    public static Boolean isDisplayedAndEnabled(WebElement element)
-    {
+    public static Boolean isDisplayedAndEnabled(WebElement element) {
         return element.isEnabled() && element.getAttribute("disabled") == null && element.isDisplayed();
     }
 
-    public static void moveToElement(WebElement element){
+    public static void moveToElement(WebElement element) {
         Actions mover = new Actions(DriverManager.getWebDriverInstance());
         mover.moveToElement(element).build().perform();
     }
 
-    public static void moveToElementAndClick(WebElement element)
-    {
+    public static void moveToElementAndClick(WebElement element) {
         Actions mover = new Actions(DriverManager.getWebDriverInstance());
         mover.moveToElement(element).click().build().perform();
     }

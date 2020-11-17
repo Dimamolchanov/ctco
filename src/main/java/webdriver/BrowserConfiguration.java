@@ -9,9 +9,8 @@ public class BrowserConfiguration {
         REMOTE
     }
 
-    public static BrowserType getBrowser(){
-        switch (getProperty("browserName"))
-        {
+    public static BrowserType getBrowser() {
+        switch (getProperty("browserName")) {
             case "CHROME":
                 return BrowserType.CHROME;
             case "FIREFOX":

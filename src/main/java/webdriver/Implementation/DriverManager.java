@@ -13,8 +13,7 @@ public class DriverManager {
     private DriverManager(){}
 
     public static WebDriver getWebDriverInstance() {
-        if (driver == null)
-        {
+        if (driver == null) {
             driver = WebDriverFactory.initWebDriverInstance(BrowserConfiguration.getBrowser()).initWebDriverInstance();
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.MINUTES);
@@ -23,7 +22,7 @@ public class DriverManager {
         return driver;
     }
 
-    public static void CloseBrowser(){
+    public static void closeBrowser() {
         driver.quit();
         driver = null;
     }
