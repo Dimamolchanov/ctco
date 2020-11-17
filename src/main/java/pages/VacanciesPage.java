@@ -24,8 +24,7 @@ public class VacanciesPage extends BasePage {
         try {
             return profSkillsParagraph.size();
         }
-        catch (NullPointerException e)
-        {
+        catch (NullPointerException e) {
             e.getStackTrace();
             return 0;
         }

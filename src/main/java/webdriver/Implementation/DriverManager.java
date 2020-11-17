@@ -14,6 +14,7 @@ public class DriverManager {
 
     public static WebDriver getWebDriverInstance() {
         if (driver == null) {
+
             driver = WebDriverFactory.initWebDriverInstance(BrowserConfiguration.getBrowser()).initWebDriverInstance();
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.MINUTES);

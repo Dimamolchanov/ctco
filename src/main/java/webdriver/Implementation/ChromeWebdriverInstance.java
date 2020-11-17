@@ -6,10 +6,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import webdriver.Abstraction.IWebDriverInstanceInit;
 
 public class ChromeWebdriverInstance implements IWebDriverInstanceInit {
+    public static final String VERSION_CHROME_DRIVER = "86.0.4240.22";
     @Override
     public WebDriver initWebDriverInstance() {
-        //please update the absolute path for your local directory
-        System.setProperty("webdriver.chrome.driver", "c:\\MYFILES\\automation\\CT_DEV_TEST\\chromedriver.exe");
+        io.github.bonigarcia.wdm.WebDriverManager.chromedriver().browserVersion(VERSION_CHROME_DRIVER).setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--disable-notifications");
         return new ChromeDriver(chromeOptions);
